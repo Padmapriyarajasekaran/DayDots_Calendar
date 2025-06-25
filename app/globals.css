@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+
+/* Focus styles */
+*:focus:not(ol) {
+  @apply outline-none ring-2 ring-cyan-400 border-cyan-400;
+}
+/* Optional - Make sure body has no conflicting background */
+body {
+  @apply min-h-screen;
+}
+
+/* Select styles */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+/* Hide scrollbars utility */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Theme colors */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+  }
+}
+
+/* Apply theme background/text + borders */
+@layer base {
+  html {
+    @apply bg-gray-200 text-black dark:bg-gray-900 dark:text-white transition-colors duration-300;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom Calendar styling */
+.react-calendar {
+  border: none;
+  background-color: transparent;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+.react-calendar__tile {
+  height: 5rem;
+  padding: 0.5rem;
+  background: transparent;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  border: 1px solid black;
+  font-weight: 600;
+  color: #AD49E1;
+}
+
+.dark .react-calendar__tile {
+  border: 1px solid rgb(6, 7, 30);
+  color: #AD49E1;
+}
+
+.react-calendar__tile--active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #9c0a95;
+  color: #2E073F;
+}
+
+.dark .react-calendar__tile:enabled:hover {
+  background-color: #2E073F;
+  color: #AD49E1;
+}
+
+.react-calendar__month-view__days__day {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 700;
+  color: #2E073F;
+}
+
+.dark .react-calendar__month-view__days__day {
+  color: #AD49E1;
+}
+/* Calendar title styling */
+.calendar-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2E073F;
+}
+
+.dark .calendar-title {
+  color: #AD49E1;
+}
+
+/* Month & Year header styling */
+.calendar-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2E073F;
+}
+
+.dark .calendar-header {
+  color: #AD49E1;
+}
+.calendar-title,
+.calendar-header {
+  transition: color 0.3s ease;
+}
