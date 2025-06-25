@@ -39,13 +39,13 @@ git clone https://github.com/Padmapriyarajasekaran/DayDots_Calendar.git
 cd DayDots_Calendar
 
 ```
-### 2.Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3.Start the Development Server
+### 3. Start the Development Server
 ```bash
 npm run dev
 ```
